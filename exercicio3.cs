@@ -4,7 +4,7 @@ public class UsuarioNaoAutenticadoException : Exception
 {
 
     public UsuarioNaoAutenticadoException()
-        : base("Acesso negado: O usuário não está autenticado no sistema.")
+        : base("O usuário não está autenticado no sistema.")
     {
     }
 
@@ -29,7 +29,7 @@ public class SistemaSeguro
     public void FazerLogin()
     {
         estaAutenticado = true;
-        Console.WriteLine("Login realizado com sucesso!");
+        Console.WriteLine("Login realizado!");
     }
 
     public void FazerLogout()
@@ -43,11 +43,11 @@ public class SistemaSeguro
         if (!estaAutenticado)
         {
             throw new UsuarioNaoAutenticadoException(
-                "Tentativa de acesso bloqueada: Você precisa fazer login para visualizar estes dados."
+                "Você precisa fazer login para visualizar estes dados."
             );
         }
 
-        Console.WriteLine("Acesso liberado. Exibindo dados sigilosos...");
+        Console.WriteLine("Acesso liberado.");
     }
 }
 
