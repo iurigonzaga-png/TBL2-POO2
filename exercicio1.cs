@@ -14,7 +14,7 @@ public class IdadeInvalidaException : Exception
         : base(message, inner) { }
 
     public IdadeInvalidaException(int idade)
-        : base($"A idade informada ({idade}) é inválida. Deve estar entre 0 e 120 anos.")
+        : base($"A idade informada ({idade}) é inválida. A idade deve estar entre 0 e 100 anos.")
     {
         Idade = idade;
     }
@@ -27,7 +27,7 @@ public class Pessoa
 
     public Pessoa(string nome, int idade)
     {
-        if (idade < 0 || idade > 120)
+        if (idade < 0 || idade > 100)
         {
             throw new IdadeInvalidaException(idade);
         }
@@ -50,7 +50,7 @@ class Program
         {
             Console.WriteLine("ERRO DE VALIDAÇÃO:");
             Console.WriteLine(ex.Message);
-            Console.WriteLine($"Valor rejeitado: {ex.Idade}");
+            Console.WriteLine($"Idade rejeitada: {ex.Idade}");
         }
         catch (Exception ex)
         {
