@@ -5,7 +5,7 @@ using System.IO;
 public class ArquivoConfigException : Exception
 {
     public ArquivoConfigException()
-        : base("O arquivo de configuração não foi encontrado no diretório especificado.")
+        : base("Arquivo de configuração não encontrado.")
     {
     }
     public ArquivoConfigException(string message)
@@ -30,12 +30,12 @@ public class Program
             );
         }
 
-        Console.WriteLine("Arquivo de configuração carregado com sucesso!");
+        Console.WriteLine("Arquivo de configuração carregado!");
     }
 
     public static void Main()
     {
-        string caminhoInvalido = @"C:\diretorio_falso\configuracao.json";
+        string caminhoInvalido = @"C:\diretorio\configuracao.json";
 
         try
         {
